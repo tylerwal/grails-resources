@@ -1,0 +1,24 @@
+<plugin name='resources' version='4.00' grailsVersion='4.0 &gt; *'>
+  <type>org.grails.plugin.resource.ResourcesGrailsPlugin</type>
+  <developers>[[name:Marc Palmer, email:marc@grailsrocks.com], [name:Luke Daley, email:ld@ldaley.com], [name:Peter N. Steinmetz, email:ndoc3@steinmetz.org]]</developers>
+  <watchedResources>[file:./grails-app/resourceMappers/**/*.groovy, file:./plugins/*/grails-app/resourceMappers/**/*.groovy, file:./grails-app/conf/*Resources.groovy, file:./plugins/*/grails-app/conf/*Resources.groovy, file:./web-app/**/*.*]</watchedResources>
+  <documentation>http://grails-plugins.github.com/grails-resources</documentation>
+  <description>HTML resource management enhancements to replace g.resource etc.</description>
+  <DEFAULT_URI_PREFIX>static</DEFAULT_URI_PREFIX>
+  <title>Resources</title>
+  <version />
+  <artefacts>[org.grails.plugin.resource.ResourcesGrailsPlugin.getResourceMapperArtefactHandler(), org.grails.plugin.resource.ResourcesGrailsPlugin.getResourcesArtefactHandler()]</artefacts>
+  <grailsVersion>4.0 &gt; *</grailsVersion>
+  <loadAfter>[logging]</loadAfter>
+  <license>APACHE</license>
+  <pluginExcludes>[grails-app/views/error.gsp, grails-app/views/index.gsp, grails-app/controllers/**/*.groovy, web-app/css/**/*.*, web-app/js/**/*.*, web-app/images/**/*.*, grails-app/resourceMappers/**/test/*, grails-app/conf/*Resources.groovy, grails-app/conf/META-INF/mime.types]</pluginExcludes>
+  <issueManagement system='JIRA' url='http://jira.grails.org/browse/GPRESOURCES' />
+  <RELOADABLE_RESOURCE_EXCLUDES>[**/.svn/**/*.*, **/.git/**/*.*, WEB-INF/**/*.*, META-INF/**/*.*]</RELOADABLE_RESOURCE_EXCLUDES>
+  <organization name='Grails Community' url='http://grails.org/' />
+  <name>resources</name>
+  <RELOAD_THROTTLE_DELAY>500</RELOAD_THROTTLE_DELAY>
+  <scm url='https://github.com/grails-plugins/grails-resources' />
+  <resources>
+    <resource>org.grails.plugin.resource.ResourceTagLib</resource>
+  </resources>
+</plugin>
