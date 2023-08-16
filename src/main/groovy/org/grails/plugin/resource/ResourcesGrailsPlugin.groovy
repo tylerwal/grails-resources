@@ -1,4 +1,9 @@
+package org.grails.plugin.resource
+
+import grails.core.ArtefactHandlerAdapter
+import grails.plugins.Plugin
 import grails.util.Environment
+import org.grails.plugin.resource.artefacts.AbstractResourcesArtefactHandler
 import org.grails.plugin.resource.util.HalfBakedLegacyLinkGenerator
 import org.springframework.core.io.FileSystemResource
 import org.springframework.util.AntPathMatcher
@@ -11,13 +16,13 @@ import java.util.concurrent.TimeUnit
  * @author Marc Palmer (marc@grailsrocks.com)
  * @author Luke Daley (ld@ldaley.com)
  */
-class ResourcesGrailsPlugin {
+class ResourcesGrailsPlugin extends Plugin {
 
     static DEFAULT_URI_PREFIX = 'static'
     static DEFAULT_ADHOC_PATTERNS = ["/images/*", "*.css", "*.js"].asImmutable()
 
     def version = "1.2.15-SNAPSHOT"
-    def grailsVersion = "1.3 > *"
+    def grailsVersion = "4.0 > *"
 
     def loadAfter = ['logging'] // retained to ensure correct loading under Grails < 2.0
 
@@ -33,7 +38,7 @@ class ResourcesGrailsPlugin {
 			"grails-app/conf/META-INF/mime.types"
     ]
 
-    def artefacts = [getResourceMapperArtefactHandler(), getResourcesArtefactHandler()]
+    List<ArtefactHandlerAdapter> artefacts = [getResourceMapperArtefactHandler(), getResourcesArtefactHandler()]
     def watchedResources = [
         "file:./grails-app/resourceMappers/**/*.groovy",
         "file:./plugins/*/grails-app/resourceMappers/**/*.groovy",
@@ -248,11 +253,11 @@ class ResourcesGrailsPlugin {
     /**
      * We have to soft load this class so this file can be compiled on it's own.
      */
-    static getResourceMapperArtefactHandler() {
+    static ArtefactHandlerAdapter getResourceMapperArtefactHandler() {
         softLoadClass('org.grails.plugin.resources.artefacts.ResourceMapperArtefactHandler')
     }
 
-    static getResourcesArtefactHandler() {
+    static ArtefactHandlerAdapter getResourcesArtefactHandler() {
         softLoadClass('org.grails.plugin.resources.artefacts.ResourcesArtefactHandler')
     }
 

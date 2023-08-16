@@ -2,9 +2,9 @@ package org.grails.plugin.resource
 
 import grails.util.GrailsUtil
 import org.apache.commons.io.FilenameUtils
-import org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException
 import org.grails.plugin.resource.util.DispositionsUtils
-import org.grails.plugin.resources.stash.StashManager
+import org.grails.plugin.resource.stash.StashManager
+import org.grails.taglib.GrailsTagException
 
 /**
  * This taglib handles creation of all the links to resources, including the smart de-duping of them.
