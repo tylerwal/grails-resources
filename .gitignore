@@ -24,4 +24,4 @@ dependencies.groovy
 /test-tmp/
 /src/docs/ref/Resources/
 *.swp
-
+/build
