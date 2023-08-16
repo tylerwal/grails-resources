@@ -5,6 +5,8 @@ import org.apache.commons.io.FilenameUtils
 import org.grails.plugin.resource.util.DispositionsUtils
 import org.grails.plugin.resource.stash.StashManager
 import org.grails.taglib.GrailsTagException
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 /**
  * This taglib handles creation of all the links to resources, including the smart de-duping of them.
@@ -15,6 +17,8 @@ import org.grails.taglib.GrailsTagException
  * @author Luke Daley (ld@ldaley.com)
  */
 class ResourceTagLib {
+
+    Logger log = LoggerFactory.getLogger(ResourceTagLib.class)
 	
     static namespace = "r"
 

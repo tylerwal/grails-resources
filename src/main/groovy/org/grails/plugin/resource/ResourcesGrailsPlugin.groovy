@@ -82,7 +82,7 @@ class ResourcesGrailsPlugin extends Plugin {
         patterns instanceof List ? patterns : DEFAULT_ADHOC_PATTERNS
     }
 
-    def doWithSpring = { ->
+    Closure doWithSpring() {{->
         if (!springConfig.containsBean('grailsLinkGenerator')) {
             grailsLinkGenerator(HalfBakedLegacyLinkGenerator) {
                 pluginManager = ref('pluginManager')
@@ -99,7 +99,7 @@ class ResourcesGrailsPlugin extends Plugin {
 
         // Legacy service name
         springConfig.addAlias "resourceService", "grailsResourceProcessor"
-    }
+    }}
 
     def doWithWebDescriptor = { webXml ->
         def adHocPatterns = getAdHocPatterns(application)

@@ -1,4 +1,4 @@
-<plugin name='resources' version='4.00' grailsVersion='4.0 &gt; *'>
+<plugin name='resources' version='4.02' grailsVersion='4.0 &gt; *'>
   <type>org.grails.plugin.resource.ResourcesGrailsPlugin</type>
   <developers>[[name:Marc Palmer, email:marc@grailsrocks.com], [name:Luke Daley, email:ld@ldaley.com], [name:Peter N. Steinmetz, email:ndoc3@steinmetz.org]]</developers>
   <watchedResources>[file:./grails-app/resourceMappers/**/*.groovy, file:./plugins/*/grails-app/resourceMappers/**/*.groovy, file:./grails-app/conf/*Resources.groovy, file:./plugins/*/grails-app/conf/*Resources.groovy, file:./web-app/**/*.*]</watchedResources>
